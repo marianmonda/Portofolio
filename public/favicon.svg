@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Fondo negro -->
+  <rect width="100" height="100" rx="18" fill="#09090b" />
+
+  <!-- m.m diagonal, punto en emerald -->
+  <text
+    x="50"
+    y="50"
+    font-family="'Arial Black', 'Arial Bold', Impact, sans-serif"
+    font-size="60"
+    font-weight="700"
+    fill="#ffffff"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    transform="rotate(45, 50, 50)"
+  >m<tspan fill="#10b981" dx="-4.5">.</tspan><tspan dx="-5">m</tspan></text>
+</svg>
