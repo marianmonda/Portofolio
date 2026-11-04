@@ -6,8 +6,11 @@ export const translations = {
       projects: 'Proyectos',
       skills: 'Habilidades',
       contact: 'Contacto',
+      cv: 'CV',
     },
     hero: {
+      location: 'Almería, España',
+      availability: 'Buscando prácticas',
       statusBadge: 'En búsqueda activa de prácticas profesionales',
       englishBadge: 'Inglés C1 Aptis',
       greeting: 'Hola, soy',
@@ -65,27 +68,27 @@ export const translations = {
     },
     skills: {
       number: '03.',
-      title: 'Habilidades Técnicas',
+      title: 'Lo que uso para construir',
       categories: [
         {
-          title: 'Backend & Sistemas',
-          type: 'server',
-          skills: ['C#', 'ASP.NET Core', 'Spring Boot', 'Node.js', 'PHP', 'Microservicios', 'REST APIs'],
+          title: 'Lenguajes',
+          skills: ['JavaScript', 'C#', 'PHP', 'SQL'],
         },
         {
-          title: 'Frontend & Web',
-          type: 'layout',
-          skills: ['React', 'Angular', 'JavaScript (ES6+)', 'Tailwind CSS', 'HTML5 / CSS3', 'Vite'],
+          title: 'Frameworks',
+          skills: ['React', 'Angular', 'ASP.NET Core', 'Spring Boot', 'Node.js'],
         },
         {
-          title: 'DevOps, Datos & Herramientas',
-          type: 'cpu',
-          skills: ['Docker', 'SignalR', 'MySQL', 'Git & GitHub', 'Linux', 'Metodologías Ágiles (Scrum)'],
+          title: 'Bases de datos',
+          skills: ['MySQL', 'PostgreSQL', 'SQL Server', 'Redis'],
         },
         {
-          title: 'Idiomas & Comunicación',
-          type: 'languages',
-          skills: ['Español (Nativo)', 'Inglés (C1 Aptis Advanced)'],
+          title: 'Herramientas',
+          skills: ['Docker', 'Git & GitHub', 'Vite', 'Linux'],
+        },
+        {
+          title: 'AI/ML',
+          skills: ['LLM APIs', 'RAG', 'Embeddings vectoriales', 'Búsqueda semántica', 'Fine-tuning'],
         },
       ],
     },
@@ -95,7 +98,7 @@ export const translations = {
       description:
         'En búsqueda activa de prácticas profesionales. Si tienes una propuesta, una consulta técnica o simplemente quieres conectar, estaré encantado de hablar.',
       ctaButton: 'Enviar mensaje',
-      copyright: 'Marian Monda. Computer Engineering Student | Junior Developer.',
+      copyright: 'Marian Monda. Estudiante de Ingeniería Informática | Desarrollador Junior.',
     },
   },
   en: {
@@ -105,8 +108,11 @@ export const translations = {
       projects: 'Projects',
       skills: 'Skills',
       contact: 'Contact',
+      cv: 'Resume',
     },
     hero: {
+      location: 'Almeria, Spain',
+      availability: 'Open to internships',
       statusBadge: 'Actively seeking software engineering internships',
       englishBadge: 'English C1 Aptis',
       greeting: 'Hi, I am',
@@ -164,27 +170,27 @@ export const translations = {
     },
     skills: {
       number: '03.',
-      title: 'Technical Skills',
+      title: 'What I build with',
       categories: [
         {
-          title: 'Backend & Systems',
-          type: 'server',
-          skills: ['C#', 'ASP.NET Core', 'Spring Boot', 'Node.js', 'PHP', 'Microservices', 'REST APIs'],
+          title: 'Languages',
+          skills: ['JavaScript', 'C#', 'PHP', 'SQL'],
         },
         {
-          title: 'Frontend & Web',
-          type: 'layout',
-          skills: ['React', 'Angular', 'JavaScript (ES6+)', 'Tailwind CSS', 'HTML5 / CSS3', 'Vite'],
+          title: 'Frameworks',
+          skills: ['React', 'Angular', 'ASP.NET Core', 'Spring Boot', 'Node.js'],
         },
         {
-          title: 'DevOps, Data & Tools',
-          type: 'cpu',
-          skills: ['Docker', 'SignalR', 'MySQL', 'Git & GitHub', 'Linux', 'Agile Methodologies (Scrum)'],
+          title: 'Databases',
+          skills: ['MySQL', 'PostgreSQL', 'SQL Server', 'Redis'],
         },
         {
-          title: 'Languages & Communication',
-          type: 'languages',
-          skills: ['Spanish (Native)', 'English (C1 Aptis Advanced)'],
+          title: 'Tools',
+          skills: ['Docker', 'Git & GitHub', 'Vite', 'Linux'],
+        },
+        {
+          title: 'AI/ML',
+          skills: ['LLM APIs', 'RAG', 'Vector embeddings', 'Semantic search', 'Fine-tuning'],
         },
       ],
     },

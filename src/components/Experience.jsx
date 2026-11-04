@@ -3,7 +3,7 @@ import { Briefcase, Calendar, MapPin } from 'lucide-react';
 
 export default function Experience({ t }) {
   return (
-    <section id="experience" className="py-20 border-t border-zinc-200/60 dark:border-zinc-800/60">
+    <section id="experience" className="py-20">
       {/* Header */}
       <div className="flex items-center gap-3 mb-10">
         <span className="font-mono text-emerald-600 dark:text-emerald-400 text-sm">{t.number}</span>

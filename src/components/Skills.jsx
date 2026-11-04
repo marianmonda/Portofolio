@@ -1,54 +1,64 @@
 import React from 'react';
-import { Server, Layout, Cpu, Languages } from 'lucide-react';
 
-const iconMap = {
-  server: Server,
-  layout: Layout,
-  cpu: Cpu,
-  languages: Languages,
+const logoMap = {
+  JavaScript: ['javascript', 'javascript-original.svg'],
+  'C#': ['csharp', 'csharp-original.svg'],
+  PHP: ['php', 'php-original.svg'],
+  SQL: ['postgresql', 'postgresql-original.svg'],
+  React: ['react', 'react-original.svg'],
+  Angular: ['angular', 'angular-original.svg'],
+  'ASP.NET Core': ['dotnetcore', 'dotnetcore-original.svg'],
+  'Spring Boot': ['spring', 'spring-original.svg'],
+  'Node.js': ['nodejs', 'nodejs-original.svg'],
+  MySQL: ['mysql', 'mysql-original.svg'],
+  PostgreSQL: ['postgresql', 'postgresql-original.svg'],
+  'SQL Server': ['microsoftsqlserver', 'microsoftsqlserver-plain.svg'],
+  Redis: ['redis', 'redis-original.svg'],
+  Docker: ['docker', 'docker-original.svg'],
+  'Git & GitHub': ['github', 'github-original.svg'],
+  Vite: ['vite', 'vite-original.svg'],
+  Linux: ['linux', 'linux-original.svg'],
 };
 
 export default function Skills({ t }) {
   return (
-    <section id="skills" className="py-20 border-t border-zinc-200/60 dark:border-zinc-800/60">
+    <section id="skills" className="skills-section">
       {/* Header */}
-      <div className="flex items-center gap-3 mb-10">
+      <div className="flex items-center gap-3 mb-8">
         <span className="font-mono text-emerald-600 dark:text-emerald-400 text-sm">{t.number}</span>
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-white">
           {t.title}
         </h2>
-        <div className="flex-1 h-[1px] bg-zinc-200 dark:bg-zinc-800 ml-4 max-w-xs"></div>
+        <div className="flex-1 h-px bg-zinc-300 dark:bg-zinc-700 ml-4 max-w-xs"></div>
       </div>
 
-      {/* Grid de categorías */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="skills-grid">
         {t.categories.map((category, index) => {
-          const Icon = iconMap[category.type] || Server;
           return (
-            <div
-              key={index}
-              className="p-6 rounded-xl border border-zinc-200 dark:border-zinc-800/80 bg-white/50 dark:bg-zinc-900/40 flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
-                    <Icon size={20} />
-                  </div>
-                  <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm sm:text-base">
-                    {category.title}
-                  </h3>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-2.5 py-1 text-xs font-mono rounded-md bg-zinc-100 dark:bg-zinc-800/80 text-zinc-700 dark:text-zinc-300 border border-zinc-200/70 dark:border-zinc-700/60"
-                    >
+            <div className="skill-row" key={`${category.title}-${index}`}>
+              <h3>{category.title}</h3>
+              <div className="skill-tools">
+                {category.skills.map((skill) => {
+                  const logo = logoMap[skill];
+                  return (
+                    <span className={`skill-tool${logo ? '' : ' skill-tool--text'}`} key={skill}>
+                      <span className="skill-tool__logo">
+                        {logo ? (
+                          <img
+                            src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${logo[0]}/${logo[1]}`}
+                            alt=""
+                            width="30"
+                            height="30"
+                            onError={(event) => { event.currentTarget.style.display = 'none'; }}
+                          />
+                        ) : (
+                          <span aria-hidden="true">{skill.slice(0, 2).toUpperCase()}</span>
+                        )}
+                      </span>
                       {skill}
                     </span>
-                  ))}
-                </div>
+                  );
+                })}
               </div>
             </div>
           );

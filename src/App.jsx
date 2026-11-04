@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
+import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import { translations } from './data/translations';
 
@@ -26,6 +27,24 @@ export default function App() {
     // Detección automática por idioma de navegador
     return navigator.language.startsWith('es') ? 'es' : 'en';
   });
+  const [languagePhase, setLanguagePhase] = useState('idle');
+  const languageTimer = useRef(null);
+
+  const handleLanguageChange = (nextLanguage) => {
+    if (nextLanguage === language || languagePhase !== 'idle') return;
+
+    window.clearTimeout(languageTimer.current);
+    setLanguagePhase('exiting');
+    languageTimer.current = window.setTimeout(() => {
+      setLanguage(nextLanguage);
+      setLanguagePhase('entering');
+      languageTimer.current = window.setTimeout(() => setLanguagePhase('idle'), 420);
+    }, 140);
+  };
+
+  useEffect(() => {
+    return () => window.clearTimeout(languageTimer.current);
+  }, []);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -52,16 +71,19 @@ export default function App() {
         darkMode={darkMode}
         setDarkMode={setDarkMode}
         language={language}
-        setLanguage={setLanguage}
+        setLanguage={handleLanguageChange}
         t={t.nav}
       />
 
       {/* Contenido principal estructurado */}
-      <main className="flex-1 max-w-5xl mx-auto px-6 w-full">
+      <main className={`flex-1 w-full language-transition language-transition--${languagePhase}`}>
         <HeroSection t={t.hero} />
-        <Experience t={t.experience} />
-        <Projects t={t.projects} />
-        <Skills t={t.skills} />
+        <div className="content-frame">
+          <Experience t={t.experience} />
+          <Projects t={t.projects} />
+          <Skills t={t.skills} />
+          <ContactSection t={t.footer} />
+        </div>
       </main>
 
       {/* Footer y sección de contacto */}
